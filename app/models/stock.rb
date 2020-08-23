@@ -1,5 +1,4 @@
 class Stock < ApplicationRecord
-
 def self.find_by_ticker(symbol)
 	where(ticker: symbol).first
 
@@ -25,5 +24,7 @@ open_price = StockQuote::Stock.quote(ticker).open
 return "#{open_price}, (closing)" if open_price
 'Unavailable'
 	end
+
+	
 
 end
