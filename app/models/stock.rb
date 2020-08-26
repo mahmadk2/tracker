@@ -1,5 +1,10 @@
 class Stock < ApplicationRecord
+has_many :user_stocks
+has_many :users, through: :user_stocks
+
+
 def self.find_by_ticker(symbol)
+
 	where(ticker: symbol).first
 
 end
@@ -17,7 +22,7 @@ new_stock
 end
 
 def price
-closing_price = StockQuote::Stock.quote(ticker).close
+closing_price = StockQuote::Stock.quote(ticker).latest_price
 return "#{closing_price}, (closing)" if closing_price
 
 open_price = StockQuote::Stock.quote(ticker).open
