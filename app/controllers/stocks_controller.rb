@@ -1,6 +1,5 @@
 class StocksController <ApplicationController
 def search
-	StockQuote::Stock.new(api_key: 'sk_55cd0160ffd447c1b0ddf9c9a4ae1685')
 	if params[:stock]
 
 		@stock = Stock.find_by_ticker(params[:stock])
