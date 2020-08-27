@@ -22,15 +22,15 @@
 
 <tbody>
 
-<% @user_stocks.each do |user_stock| %>
+<% @user_stocks.each do |userstock| %>
 
 <tr>
 
-<td><%= user_stock.name %></td>
+<td><%= userstock.name %></td>
 
-<td><%= user_stock.ticker %></td>
+<td><%= userstock.ticker %></td>
 
-<td><%= user_stock.price %></td>
+<td><%= userstock.price %></td>
 
 <% if @user.id == current_user.id %>
 
@@ -38,8 +38,7 @@
 
 <%= link_to 'Delete',
 
-user_stock_path(user_stock),
-
+user_stock_path(userstock),
 method: :delete,
 
 :data => { :confirm => 'Are you sure?' },
@@ -47,6 +46,7 @@ method: :delete,
 :class => 'btn btn-xs btn-danger' %>
 
 </td>
+
 
 <% end %>
 

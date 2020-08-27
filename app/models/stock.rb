@@ -10,6 +10,7 @@ def self.find_by_ticker(symbol)
 end
 
 def self.new_lookup(symbol)
+	StockQuote::Stock.new(api_key: 'sk_55cd0160ffd447c1b0ddf9c9a4ae1685')
 	
 looked_up = StockQuote::Stock.quote(symbol)
 return nil unless looked_up.company_name
