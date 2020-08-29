@@ -8,6 +8,11 @@ class User < ApplicationRecord
          has_many :stocks, through: :user_stocks
 
 
+      def full_name
+          return "#{f_name} #{l_name}".strip if (f_name || l_name)
+          "anonymous"
+      end
+
      def add_stock?(symbol)
     
        stock_limit? && !add_already?(symbol)
