@@ -1,0 +1,29 @@
+<h1> User's Details</h1>
+
+
+
+<p><strong>Name : <%= @user.full_name %> </strong></p>
+
+<p><strong>Email : <%= @user.email %> </strong></p>
+
+
+
+
+
+
+
+
+
+
+
+<% if @user.stocks.size >0 %>
+<%= render 'stocks/list' %>
+
+<%else%>
+<p>this user not tracking stock</p>
+
+<%end%>
+
+<%= link_to 'Back', my_friends_path, class:'btn btn-info' %>
+
+
